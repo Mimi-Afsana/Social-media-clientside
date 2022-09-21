@@ -1,0 +1,27 @@
+[
+  {
+    "id": 1,
+    "profilePicture": "/assets/person/person1.jpg",
+    "userName": "Afsana"
+  },
+  {
+    "id": 2,
+    "profilePicture": "/assets/person/person-2.jpg",
+    "userName": "Islam"
+  },
+  {
+    "id": 3,
+    "profilePicture": "/assets/person/person-3.jpg",
+    "userName": "Arifa"
+  },
+  {
+    "id": 4,
+    "profilePicture": "/assets/person/person4.jpg",
+    "userName": "Doha"
+  },
+  {
+    "id": 4,
+    "profilePicture": "/assets/person/person-5.jpg",
+    "userName": "Towhidul"
+  }
+]

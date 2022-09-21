@@ -2,7 +2,8 @@
   flex: 3;
   height: 100vh;
   overflow-y: scroll;
-  margin-bottom: 2px;
+  position: sticky;
+  top: 50px;
 }
 ::-webkit-scrollbar {
   width: 5px;
@@ -11,7 +12,7 @@
   background-color: #f1f1f1;
 }
 ::-webkit-scrollbar-thumb {
-  background-color: rgb(179,179,179);
+  background-color: rgb(179, 179, 179);
 }
 
 .sidebarWrapper {
@@ -45,16 +46,4 @@
   padding: 0;
   margin: 0;
   list-style: none;
-}
-.sidebarFriend {
-  display: flex;
-  align-items: center;
-  margin-bottom: 15px;
-}
-.sidebarFriendImg {
-  width: 32px;
-  height: 32px;
-  border-radius: 50%;
-  object-fit: cover;
-  margin-right: 10px;
 }
