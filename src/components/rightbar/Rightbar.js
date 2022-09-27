@@ -63,7 +63,7 @@ const Rightbar = ({ profile }) => {
           <div className="rightbarFollowing">
             <img
               className="rightbarFollowingImg"
-              src="/assets/person/person4.jpg"
+              src="/assets/person/person-2.jpg"
               alt=""
             />
             <span className="rightbarFollowingName">Ariba Islam</span>
