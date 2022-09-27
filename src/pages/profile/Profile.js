@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { useParams } from "react-router";
 import Feed from "../../components/feed/Feed";
 import Rightbar from "../../components/rightbar/Rightbar";
 import Sidebar from "../../components/sidebar/Sidebar";
@@ -7,11 +8,13 @@ import "./Profile.css";
 
 const Profile = () => {
   const [user, setUser] = useState({});
+  const username = useParams().username
+  
   useEffect(() => {
-    fetch(`http://localhost:8800/api/users?username=dohaa`)
+    fetch(`http://localhost:8800/api/users?username=${username}`)
       .then((res) => res.json())
       .then((data) => setUser(data));
-  }, []);
+  }, [username]);
 
   return (
     <>
@@ -23,12 +26,12 @@ const Profile = () => {
             <div className="profileCover">
               <img
                 className="profileCoverImg"
-                src="/assets/post/post-1.jpg"
+                src={user?.coverPicture || "/assets/post/post-1.jpg"}
                 alt=""
               />
               <img
                 className="profileUserImg"
-                src="/assets/person/person-2.jpg"
+                src={user?.profilePicture || " "}
                 alt=""
               />
             </div>
@@ -38,8 +41,8 @@ const Profile = () => {
             </div>
           </div>
           <div className="profileRightBottom">
-            <Feed username="dohaa"></Feed>
-            <Rightbar profile></Rightbar>
+            <Feed username={username}></Feed>
+            <Rightbar user={user}></Rightbar>
           </div>
         </div>
       </div>

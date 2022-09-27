@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import Online from "../online/Online";
 import "./Rightbar.css";
 
-const Rightbar = ({ profile }) => {
+const Rightbar = ({ user }) => {
   const [users, setUsers] = useState([]);
   useEffect(() => {
     fetch("user.json")
@@ -38,15 +38,15 @@ const Rightbar = ({ profile }) => {
           <div className="rightbarInfo">
             <div className="rightbarInfoItem">
               <span className="rightbarinfoKey">City:</span>
-              <span className="rightbarinfoKeyValue">New York</span>
+              <span className="rightbarinfoKeyValue">{user?.city}</span>
             </div>
             <div className="rightbarInfoItem">
               <span className="rightbarinfoKey">From:</span>
-              <span className="rightbarinfoKeyValue">Madrid</span>
+              <span className="rightbarinfoKeyValue">{user?.from}</span>
             </div>
             <div className="rightbarInfoItem">
               <span className="rightbarinfoKey">Relationship:</span>
-              <span className="rightbarinfoKeyValue">Single</span>
+              <span className="rightbarinfoKeyValue">{user?.relationship===1?"single":user?.relationship===2?"Married":  "-"}</span>
             </div>
           </div>
         </div>
@@ -84,7 +84,7 @@ const Rightbar = ({ profile }) => {
   return (
     <div className="rightbar">
       <div className="rightbarWrapper">
-        {profile ? (
+        {user ? (
           <ProfileRightBar></ProfileRightBar>
         ) : (
           <HomeRightBar></HomeRightBar>
