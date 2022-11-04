@@ -29,7 +29,13 @@ const Post = ({ post }) => {
           <div className="postTopLeft">
             <Link to={`profile/${user?.username}`}>
               {" "}
-              <img className="postImg" src={user?.profilePicture} alt="" />
+              <img
+                className="postImg"
+                src={
+                  user?.profilePicture || "/assets/person/no-avator.png"
+                }
+                alt=""
+              />
             </Link>
             <span className="postUsername">{user?.username}</span>
             <span className="postDate">{format(post.createdAt)}</span>
